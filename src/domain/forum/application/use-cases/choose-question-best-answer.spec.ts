@@ -8,7 +8,7 @@ import { NotAllowedError } from '@/core/errors/errors/not-allowed-error'
 import { InMemoryQuestionAttachmentRepository } from 'test/repositories/in-memory-question-attachments-repository'
 import { InMemoryAnswerAttachmentRepository } from 'test/repositories/in-memory-answer-attachments-repository'
 
-let inMemoryQuestionAttachmentsRepository: InMemoryQuestionAttachmentRepository
+let inMemoryQuestionAttachmentRepository: InMemoryQuestionAttachmentRepository
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository
 let inMemoryAnswerAttachmentRepository: InMemoryAnswerAttachmentRepository
 let inMemoryAnswersRepository: InMemoryAnswersRepository
@@ -16,10 +16,10 @@ let sut: ChooseQuestionBestAnswerUseCase
 
 describe('Choose Question Best Answer', () => {
   beforeEach(() => {
-    inMemoryQuestionAttachmentsRepository =
+    inMemoryQuestionAttachmentRepository =
       new InMemoryQuestionAttachmentRepository()
     inMemoryQuestionsRepository = new InMemoryQuestionsRepository(
-      inMemoryQuestionAttachmentsRepository,
+      inMemoryQuestionAttachmentRepository,
     )
     inMemoryAnswerAttachmentRepository =
       new InMemoryAnswerAttachmentRepository()

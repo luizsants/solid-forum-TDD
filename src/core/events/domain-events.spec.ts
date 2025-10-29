@@ -18,7 +18,7 @@ class CustomAggregateCreated implements DomainEvent {
   }
 }
 
-class CustomAggregate extends AggregateRoot<any> {
+class CustomAggregate extends AggregateRoot<null> {
   static create() {
     const aggregate = new CustomAggregate(null)
 
@@ -33,9 +33,7 @@ describe('domain events', () => {
     const callbackSpy = vi.fn()
 
     // Subscriber cadastrado (ovindo o evento de "resposta criada")
-    DomainEvents.register(() => {
-      callbackSpy()
-    }, CustomAggregateCreated.name)
+    DomainEvents.register(callbackSpy, CustomAggregateCreated.name)
 
     // Estou criando uma resposta porém SEM salvar no Banco
     const aggregate = CustomAggregate.create()
